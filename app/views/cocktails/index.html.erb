@@ -1,14 +1,27 @@
-<h1>Cocktails#index</h1>
+<div class="text-center">
+  <h1>All cocktails</h1>
+
+  <div class="container text-center">
+    <div class="row">
+      <% @cocktails.each do |c| %>
+          <%= render 'cocktail_cards', cocktail: c %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<a> <%= link_to "Créer un nouveau cocktail", new_cocktail_path %> </a>
 
 
+
+
+
+<!--
 <% @cocktails.each do |cocktail| %>
     <h2> name : <%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
         <% cocktail.doses.each do |dose| %>
-          <p> ingredient : <%= cocktail.doses.ingredient %></p>
-          <p> dose :  <%= dose.description %></p>
+          <p> <%= dose.ingredient.name %> : <%= dose.description %> </p>
         <% end %>
-
-      <%= link_to "Delete", cocktail_path(cocktail),
-          method: :delete,
-          data: { confirm: "Are you sure that you want to delete?" } %>
+  <p> <%= link_to "Effacer ce cocktail", cocktail_path(cocktail), method: :delete %></p>
 <% end %>
+ -->

@@ -41,6 +41,8 @@ gem 'autoprefixer-rails'
 #simple_form
 gem "simple_form"
 
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 ruby '2.3.3'
